@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="{% static 'css/hometwo.css' %}">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Inventory</h2>
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="/categories">All Categories</a></li>
+                
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="header">
+                <input type="text" placeholder="Search..." class="search-bar">
+                <a href="/add" class='btn Add'>Add<a/>
+                
+            </div>
+            <div class="table-container">
+                <table class="inventory-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Category</th>
+                            <th>Stock</th>
+                            <th>Price</th>
+                            
+                            
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                        <tr>
+                            <td>{{ product.item_name }}</td>
+                            <td>{{ product.category }}</td>
+                            <td>{{ product.stock }}</td>
+                            <td>{{ product.price }}</td>
+                            
+                            
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+

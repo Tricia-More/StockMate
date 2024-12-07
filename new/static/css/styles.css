@@ -1,0 +1,256 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 20%;
+    background-color: #162447;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #e43f5a;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #e43f5a;
+}
+
+/* Main Content */
+.main-content {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 10px;
+    flex: 1;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #222831;
+    color: #fff;
+}
+
+.add-product-btn {
+    padding: 10px 20px;
+    background-color: #e43f5a;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-product-btn:hover {
+    background-color: #f05454;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    background-color: #0f3460;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+.inventory-table th, .inventory-table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #162447;
+}
+
+.inventory-table th {
+    background-color: #1a1a2e;
+    color: #e43f5a;
+}
+
+.inventory-table tbody tr:nth-child(even) {
+    background-color: #1e255e;
+}
+
+.inventory-table td a {
+    color: #e43f5a;
+    text-decoration: none;
+}
+
+.inventory-table td a:hover {
+    color: #f05454;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 10px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .table-container {
+        padding: 5px;
+    }
+}
+
+/* Edit Button */
+.edit-btn {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Form Page Container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a2e;
+    padding: 20px;
+}
+
+/* Form Styling */
+form {
+    background: linear-gradient(135deg, #D16BA5, #86A8E7, #5FFBF1); /* Gradient background */
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+/* Form Header */
+form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.8em;
+}
+
+/* Label Styling */
+form label {
+    font-size: 1em;
+    font-weight: bold;
+    color: #e43f5a; /* Red color for labels */
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Input Fields */
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #313A59; /* Border matching the dark theme */
+    border-radius: 8px;
+    background-color: #162447;
+    color: white;
+    font-size: 1em;
+}
+
+/* Button Styling */
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e43f5a; /* Red color for the button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background-color: #f05454; /* Slightly lighter red on hover */
+}
+
+/* Responsive Design for Forms */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 10px;
+    }
+
+    form {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,113 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f; /* Darker background */
+    color: #f0f0f0; /* Light text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
+}
+
+/* Wrapper to center content */
+#wrapper {
+    background-color: #2c2f3b; /* Darker container background */
+    border-radius: 10px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.75rem;
+    color: #ff4d6d; /* Accent color */
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    background-color: #3a3f53; /* Darker background for inputs */
+    color: #f0f0f0;
+    border: 1px solid #555;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    background: linear-gradient(135deg, #ff4d6d, #f05454);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #f05454, #ff4d6d);
+}
+
+/* Checkbox section */
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #f05454;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ff4d6d;
+}
+
+/* Footer text */
+.text-center {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.text-center p {
+    color: #ddd;
+}
+
+/* Error message styling */
+h5 {
+    color: #ff4d6d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}

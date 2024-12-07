@@ -1,0 +1,158 @@
+/* General body background and centering */
+body {
+    background: linear-gradient(135deg, #2C3E50, #34495E); /* Dark gradient background */
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full screen height */
+    padding: 20px; /* Add some padding to avoid touching edges */
+}
+
+/* Main container layout */
+.container {
+    display: flex;
+    min-height: 90vh; /* Reduced height */
+    max-width: 1200px; /* Set a max width to prevent full-screen usage */
+    width: 100%; /* Allow it to be responsive */
+    background-color: #34495E;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #2C3E50;
+    color: #ECF0F1;
+    padding: 20px;
+    width: 220px; /* Slightly increased sidebar width */
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: #ECF0F1;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #34495E; /* Darker hover effect */
+}
+
+/* Main content area */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #BDC3C7;
+    background-color: #2C3E50;
+    color: #ECF0F1;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: #1ABC9C;
+    outline: none;
+}
+
+.btn.Add {
+    background: linear-gradient(to right, #1ABC9C, #16A085);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn.Add:hover {
+    background: linear-gradient(to right, #16A085, #1ABC9C);
+}
+
+/* Table container */
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.inventory-table {
+    width: 100%; /* Ensure the table takes up the full width available */
+    border-collapse: collapse;
+    background-color: #2C3E50;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.inventory-table thead {
+    background-color: #34495E;
+    color: #ECF0F1;
+}
+
+.inventory-table th {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+.inventory-table tbody tr {
+    background-color: #2C3E50;
+    color: #BDC3C7;
+}
+
+.inventory-table tbody tr:hover {
+    background-color: #34495E;
+}
+
+.inventory-table td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.inventory-table td a {
+    color: #1ABC9C;
+    text-decoration: none;
+}
+
+.inventory-table td a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,26 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="{% static 'css/input.css' %}">
+</head>
+<body>
+    <h1>Edit Product Page</h1>
+    <form method="POST" action="/edit">
+        {% csrf_token %}
+        <!-- Similar form as Add Product but pre-populate fields -->
+        <label for="item">Item:</label>
+        <input type="text" name="item_name" id="item" value="Existing Item">
+        <label for="category">Category:</label>
+        <input type="text" name="category" id="category" value="Existing Category">
+        <label for="stock">Stock:</label>
+        <input type="number" name="stock" id="stock" value="50">
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price" value="500">
+        <a href="/home">Update</a>
+    </form>
+</body>
+</html>

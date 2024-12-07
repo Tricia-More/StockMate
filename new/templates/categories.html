@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    
+    <link rel="stylesheet" href="{% static 'css/input.css' %}">
+   
+</head>
+<body>
+
+    <div class="container">
+        <h1>Product Categories</h1>
+        <ul class="category-list">
+            {% for category in categories %}
+                <li class="category-item">
+                    <span>{{ category.category }}</span>
+                    <a href="/home" class="icon"><i class="fas fa-cogs"></i></a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
+
+    

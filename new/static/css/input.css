@@ -1,0 +1,80 @@
+/* General body background and centering */
+body {
+    background: linear-gradient(135deg, #2C3E50, #34495E); /* Dark gradient background */
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main container layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px; /* Further reduced width for a slim layout */
+    background-color: #34495E;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    color: #ECF0F1;
+}
+
+/* Heading Style */
+h1 {
+    text-align: center;
+    color: #e43f5a;
+    font-size: 1.8rem; /* Slightly smaller heading */
+    margin-bottom: 20px;
+}
+
+/* Category List Styling */
+.category-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Category Item Styling */
+.category-item {
+    background-color: #2C3E50;
+    padding: 10px 15px; /* Reduced padding for a more compact list item */
+    border-radius: 6px;
+    margin-bottom: 12px; /* Reduced margin for a tighter layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for category items */
+.category-item:hover {
+    background-color: #34495E;
+}
+
+/* Category Link Styling */
+.category-item a {
+    text-decoration: none;
+    color: #e43f5a;
+    font-size: 1.1em; /* Slightly smaller font size */
+    transition: 0.3s;
+}
+
+/* Hover effect for category links */
+.category-item a:hover {
+    color: #f05454;
+}
+
+/* Category Icon Styling */
+.category-item .icon {
+    font-size: 1.3em; /* Slightly smaller icon */
+    color: #f05454;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for category icon */
+.category-item .icon:hover {
+    color: #e43f5a;
+}
