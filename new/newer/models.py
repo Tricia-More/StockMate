@@ -1,4 +1,5 @@
 from django.db import models
+from polymorphic.models import PolymorphicModel
 
 # Create your models here.
 from django.contrib.auth import get_user_model
@@ -25,3 +26,19 @@ class Inventory(models.Model):
 
     def __str__(self):
         return self.item_name
+    def stock_message(self):
+        # Default message for non-perishable items
+        return "In stock and available."
+
+class PerishableInventory(Inventory):
+    expiration_date = models.DateField()
+
+    def stock_message(self):
+        return f"Warning: This item expires on {self.expiration_date}."
+    
+    def __str__(self):
+        return f"{self.item_name} (Expires on {self.expiration_date})"
+    
+
+    
+    # You can also override the price or stock method if needed

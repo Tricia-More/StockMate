@@ -23,9 +23,24 @@
 
             <label for="price">Price:</label>
             <input type="text" id="price" name="price" required>
+            <label for="is_perishable">Is this item perishable?</label>
+            <input type="checkbox" name="is_perishable" id="is_perishable">
+        
+            <div id="expiration_date_div" style="display: none;">
+                <label for="expiration_date">Expiration Date:</label>
+                <input type="date" name="expiration_date" id="expiration_date">
+            </div>
 
             <button type="submit" class="submit-btn" href="/home">Add Product</button>
         </form>
+
+<script>
+    // Toggle expiration date field based on checkbox
+    document.getElementById("is_perishable").addEventListener("change", function() {
+        var expirationDateDiv = document.getElementById("expiration_date_div");
+        expirationDateDiv.style.display = this.checked ? "block" : "none";
+    });
+</script>
     </div>
 </body>
 </html>

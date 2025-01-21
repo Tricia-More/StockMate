@@ -3,11 +3,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.http import HttpResponse, JsonResponse
-from .models import Profile, Inventory
+from .models import Profile, Inventory, PerishableInventory
 from django.contrib.auth.decorators import login_required
 #from django.middleware.csrf import get_token
 
 # Create your views here.
+
+
+
 def signup(request):
     if request.method == 'POST':
         username = request.POST['username'] #gets the value of the data using th ename pf the input
@@ -65,27 +68,55 @@ def add(request):
         stock = request.POST['stock']
         price = request.POST['price']
 
+         # Check if it's a perishable item
+        is_perishable = request.POST.get('is_perishable') == 'on'
+        expiration_date = request.POST.get('expiration_date')  # Only if perishable
+
+        if is_perishable:
+            # Create a PerishableInventory object and save it
+            new_item = PerishableInventory.objects.create(
+                item_name=item_name, 
+                category=category, 
+                stock=stock, 
+                price=price, 
+                expiration_date=expiration_date
+            )
+        else:
+            # Create a regular Inventory object
+            new_item = Inventory.objects.create(
+                item_name=item_name, 
+                category=category, 
+                stock=stock, 
+                price=price
+            )
+
+        new_item.save()
+
+        return redirect('home')
+    else:
+        return render(request, 'add.html')
+
 
         
             # Create new Inventory object and save to DB
-        new = Inventory.objects.create(item_name=item_name, category=category, stock=stock, price=price)
-        new.save()
-            
+        #new = Inventory.objects.create(item_name=item_name, category=category, stock=stock, price=price)
+        #new.save()
 
-        
-        return redirect('home')
-    else:
-        
-        return render (request, 'add.html')
 
 @login_required(login_url='signin') 
 def home(request):
     
     # Retrieve all products from the Inventory model
     products = Inventory.objects.all()
+    #stock_messages = [product.stock_message() for product in products]
+        # Iterate through products and call the polymorphic method
+    for product in products:
+        if isinstance(product, PerishableInventory):
+            print(product.stock_message())  # Calls PerishableInventory's method
+
 
     # Pass the products to the template
-    return render(request, 'home.html', {'products': products})
+    return render(request, 'home.html', {'products': products},)
 
 
 @login_required(login_url='signin') 
@@ -113,5 +144,9 @@ def edit(request):  # Assuming you are passing the item ID to edit
 def categories(request):
     categories = Inventory.objects.values('category').distinct()
     return render(request, 'categories.html', {'categories': categories})
+
+
+
+
 
 
